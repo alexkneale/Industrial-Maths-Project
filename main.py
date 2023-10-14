@@ -9,6 +9,7 @@ This script finds a numerical approximation for the solution to
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation
+import scipy.linalg # library needed for matrices
 
 
 '''
