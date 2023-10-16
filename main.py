@@ -57,13 +57,13 @@ A[Nx_points-1,Nx_points-2] = -2*C
 # find the inverse of A and use for all points
 Ainv = np.linalg.inv(A)
 
+
 # function for setting the initial condition in space  I(x)
 def I2(x):
     n = x.size
     I2_arr = np.zeros(n)
-    for i in x:
-      if (i == round((n/2))):
-        I2_arr[i] = 1
+    
+    I2_arr[round(n/2)] = 1
     return I2_arr
 
 
