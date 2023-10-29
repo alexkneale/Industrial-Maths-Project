@@ -26,7 +26,7 @@ concentration_over_time = []
 for lamda in lambda_values:
     C_lamda = lamda * dt
     concentration_values = []
-    u_old = np.exp(-((x - 0.5) ** 2) / (2 * 0.1 ** 2))  # Gaussian initial condition
+    u_old = np.exp(-((x - 0.5) ** 2) / (2 * 0.1 ** 2))  
     A = np.zeros((Nx_points, Nx_points))
     b = np.zeros(Nx_points)
 
