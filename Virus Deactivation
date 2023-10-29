@@ -26,16 +26,16 @@ concentration_over_time = []
 for lamda in lambda_values:
     C_lamda = lamda * dt
     concentration_values = []
-    u_old = np.exp(-((x - 0.5) ** 2) / (2 * 0.1 ** 2))  
+    u_old = np.exp(-((x - 0.5) ** 2) / (2 * 0.1 ** 2))  # Using a gaussian inital condition because it works best - Can i def use this?
     A = np.zeros((Nx_points, Nx_points))
     b = np.zeros(Nx_points)
 
-    # set up the matrix A
+    # set up the matrix A from discretized equation
     for i in range(1, Nx_points - 1):
         A[i, i - 1] = -C
         A[i, i + 1] = -C
         A[i, i] = 1 + dt*lamda +2*C
-
+# Applying Neumann boundary conditions. Didn't change these from original based on what we spoke about in workshop.
     A[0,0] = 1+2*C  ; A[0,1]= -2*C 
     A[Nx_points-1,Nx_points-1] = 1+2*C 
     A[Nx_points-1,Nx_points-2] = -2*C
